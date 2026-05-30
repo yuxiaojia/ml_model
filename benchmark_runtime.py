@@ -26,7 +26,13 @@ DEFAULT_CUTLASS_DIRS = {
 }
 
 
-def configure_env(setup: str, cutlass_dir: Path | None, build_dir: Path, strict: bool) -> None:
+def configure_env(
+    setup: str,
+    cutlass_dir: Path | None,
+    build_dir: Path,
+    strict: bool,
+    tail_dup_print: bool,
+) -> None:
     os.environ["USE_TORCH_COMPILE"] = "0"
     os.environ.setdefault("CUDA_MODULE_LOADING", "LAZY")
     if setup == "pytorch_original":
@@ -40,6 +46,7 @@ def configure_env(setup: str, cutlass_dir: Path | None, build_dir: Path, strict:
     os.environ["CUTLASS_DIR"] = str(cutlass_dir)
     os.environ["STANDALONE_CUTLASS_DIR"] = str(cutlass_dir)
     os.environ["STANDALONE_CUTLASS_BUILD_DIR"] = str(build_dir)
+    os.environ["STANDALONE_CUTLASS_TAIL_DUP_PRINT"] = "1" if tail_dup_print else "0"
 
 
 def import_setup(bench_root: Path, setup: str) -> None:
@@ -94,7 +101,7 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
     cutlass_dir = cutlass_dir.resolve() if cutlass_dir is not None else None
     build_dir = (args.build_root / f"{args.setup}_{args.model}").resolve()
 
-    configure_env(args.setup, cutlass_dir, build_dir, args.strict)
+    configure_env(args.setup, cutlass_dir, build_dir, args.strict, args.tail_dup_print)
     import_setup(args.bench_root, args.setup)
 
     import torch
@@ -140,10 +147,14 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
 
             start = torch.cuda.Event(enable_timing=True)
             end = torch.cuda.Event(enable_timing=True)
-            with amp_ctx:
-                start.record()
-                logits = model(x)
-                end.record()
+            torch.cuda.nvtx.range_push(f"{args.setup}:{args.model}:batch_{batch_idx:03d}")
+            try:
+                with amp_ctx:
+                    start.record()
+                    logits = model(x)
+                    end.record()
+            finally:
+                torch.cuda.nvtx.range_pop()
             end.synchronize()
 
             timings_ms.append(start.elapsed_time(end))
@@ -164,6 +175,7 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
         "device": torch.cuda.get_device_name(0),
         "batch_size": args.batch_size,
         "strict": args.strict,
+        "tail_dup_print": args.tail_dup_print,
         "samples": total,
         "accuracy_pct": 100.0 * correct / max(total, 1),
         "wall_s": time.perf_counter() - wall_start,
@@ -207,6 +219,7 @@ def main() -> None:
     parser.add_argument("--batches", type=int, help="Timed batches. Omit to run the full dataset.")
     parser.add_argument("--strict", action="store_true", default=True)
     parser.add_argument("--no-strict", dest="strict", action="store_false")
+    parser.add_argument("--tail-dup-print", action="store_true")
     args = parser.parse_args()
 
     args.bench_root = args.bench_root.resolve()
