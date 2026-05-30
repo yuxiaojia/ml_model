@@ -1,0 +1,29 @@
+{
+  "accuracy_pct": 74.31,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 22.356735229492188,
+  "mean_ms": 13.465342674255371,
+  "median_ms": 12.533295631408691,
+  "min_ms": 12.429696083068848,
+  "model": "mobilenet",
+  "p95_ms": 21.732799530029297,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_runtime_build/custom_conv_cutlass_test_mobilenet",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "timed_batches": 100,
+  "total_forward_ms": 1346.534267425537,
+  "usage_stats": {
+    "direct_calls": 1717,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 3535
+  },
+  "wall_s": 2.0437306282110512
+}

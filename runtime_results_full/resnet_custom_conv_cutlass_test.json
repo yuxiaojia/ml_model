@@ -1,0 +1,29 @@
+{
+  "accuracy_pct": 68.84,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 10.708255767822266,
+  "mean_ms": 5.954561920166015,
+  "median_ms": 5.713088035583496,
+  "min_ms": 5.660160064697266,
+  "model": "resnet",
+  "p95_ms": 6.499551773071289,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_runtime_build/custom_conv_cutlass_test_resnet",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "timed_batches": 100,
+  "total_forward_ms": 595.4561920166016,
+  "usage_stats": {
+    "direct_calls": 0,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 2121
+  },
+  "wall_s": 1.618459849152714
+}

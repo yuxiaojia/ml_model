@@ -1,0 +1,16 @@
+{
+  "accuracy_pct": 68.82,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 5.805791854858398,
+  "mean_ms": 3.7693561482429505,
+  "median_ms": 3.7184640169143677,
+  "min_ms": 2.111743927001953,
+  "model": "resnet",
+  "p95_ms": 3.97760009765625,
+  "samples": 10000,
+  "setup": "pytorch_original",
+  "timed_batches": 100,
+  "total_forward_ms": 376.93561482429504,
+  "wall_s": 1.5321131967939436
+}

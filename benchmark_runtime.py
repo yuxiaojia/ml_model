@@ -26,7 +26,7 @@ DEFAULT_CUTLASS_DIRS = {
 }
 
 
-def configure_env(setup: str, cutlass_dir: Path | None, build_dir: Path) -> None:
+def configure_env(setup: str, cutlass_dir: Path | None, build_dir: Path, strict: bool) -> None:
     os.environ["USE_TORCH_COMPILE"] = "0"
     os.environ.setdefault("CUDA_MODULE_LOADING", "LAZY")
     if setup == "pytorch_original":
@@ -36,7 +36,7 @@ def configure_env(setup: str, cutlass_dir: Path | None, build_dir: Path) -> None
     if cutlass_dir is None:
         raise ValueError(f"--cutlass-dir is required for {setup}")
     os.environ["USE_STANDALONE_CUTLASS_CONV"] = "1"
-    os.environ["STANDALONE_CUTLASS_STRICT"] = "1"
+    os.environ["STANDALONE_CUTLASS_STRICT"] = "1" if strict else "0"
     os.environ["CUTLASS_DIR"] = str(cutlass_dir)
     os.environ["STANDALONE_CUTLASS_DIR"] = str(cutlass_dir)
     os.environ["STANDALONE_CUTLASS_BUILD_DIR"] = str(build_dir)
@@ -94,7 +94,7 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
     cutlass_dir = cutlass_dir.resolve() if cutlass_dir is not None else None
     build_dir = (args.build_root / f"{args.setup}_{args.model}").resolve()
 
-    configure_env(args.setup, cutlass_dir, build_dir)
+    configure_env(args.setup, cutlass_dir, build_dir, args.strict)
     import_setup(args.bench_root, args.setup)
 
     import torch
@@ -163,6 +163,7 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
         "model": args.model,
         "device": torch.cuda.get_device_name(0),
         "batch_size": args.batch_size,
+        "strict": args.strict,
         "samples": total,
         "accuracy_pct": 100.0 * correct / max(total, 1),
         "wall_s": time.perf_counter() - wall_start,
@@ -204,6 +205,8 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--warmup", type=int, default=1)
     parser.add_argument("--batches", type=int, help="Timed batches. Omit to run the full dataset.")
+    parser.add_argument("--strict", action="store_true", default=True)
+    parser.add_argument("--no-strict", dest="strict", action="store_false")
     args = parser.parse_args()
 
     args.bench_root = args.bench_root.resolve()
