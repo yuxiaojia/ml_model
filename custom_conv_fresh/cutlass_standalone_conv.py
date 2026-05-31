@@ -53,7 +53,13 @@ def _tail_duplicate_print_enabled() -> bool:
     return _env_enabled("STANDALONE_CUTLASS_TAIL_DUP_PRINT")
 
 
+def _tail_duplicate_enabled() -> bool:
+    return _env_enabled("STANDALONE_CUTLASS_TAIL_DUP") or _tail_duplicate_print_enabled()
+
+
 def _extension_name() -> str:
+    if _tail_duplicate_enabled() and not _tail_duplicate_print_enabled():
+        return f"{_BASE_EXTENSION_NAME}_taildup"
     if _tail_duplicate_print_enabled():
         return f"{_BASE_EXTENSION_NAME}_taildup_print"
     return _BASE_EXTENSION_NAME
@@ -83,6 +89,7 @@ def runtime_config() -> dict[str, str]:
         "build_dir": str(build_dir),
         "extension_name": _extension_name(),
         "kernel_source": str(cutlass_dir / "tools" / "torch_cutlass_conv" / "cutlass_conv2d_kernel.cu"),
+        "tail_duplicate": str(_tail_duplicate_enabled()),
         "tail_duplicate_print": str(_tail_duplicate_print_enabled()),
     }
 
@@ -110,10 +117,17 @@ def _load_extension():
             "-U__CUDA_NO_HALF_OPERATORS__",
             "-U__CUDA_NO_HALF_CONVERSIONS__",
         ]
-        if _tail_duplicate_print_enabled():
+        if _tail_duplicate_enabled():
             extra_cuda_cflags.extend(
                 [
                     "-DCUTLASS_ENABLE_IMPLICIT_GEMM_MULTISTAGE_TAIL_DUPLICATE=1",
+                    "-DCUTLASS_ENABLE_MMA_MULTISTAGE_TAIL_DUPLICATE=1",
+                ]
+            )
+        if _tail_duplicate_print_enabled():
+            extra_cuda_cflags.extend(
+                [
+                    "-DCUTLASS_TAIL_DUPLICATE_ENABLE_PRINTF=1",
                     "-DCUTLASS_IMPLICIT_GEMM_TAIL_DUPLICATE_PRINT_REGS=1",
                 ]
             )
