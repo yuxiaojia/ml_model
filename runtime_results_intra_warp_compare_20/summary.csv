@@ -1,0 +1,10 @@
+model,variant,timed_batches,samples,mean_ms,median_ms,p95_ms,overhead_pct_vs_cutlass_test,tail_dup_print,strict,standalone_calls,direct_calls,fallback_calls,cutlass_dir,extension_name
+resnet,fresh,20,2000,6.661939239501953,6.489327907562256,7.642144203186035,1.8264741756436997,False,True,441,0,0,/net/netscratch/yjia305/cutlass_fresh,torch_cutlass_test_conv_ext_v1
+resnet,cutlass_test,20,2000,6.542443203926086,6.465504169464111,6.993279933929443,0.0,False,True,441,0,0,/net/netscratch/yjia305/cutlass_test,torch_cutlass_test_conv_ext_v1
+resnet,intra_warp_taildup,20,2000,12.417697620391845,12.792239665985107,13.09324836730957,89.8021462829062,True,True,441,0,0,/net/netscratch/yjia305/cutlass_intra_warp,torch_cutlass_test_conv_ext_v1_taildup_print
+mobilenet,fresh,20,2000,18.370774459838866,17.537407875061035,23.14192008972168,0.5993089713317357,False,True,735,357,0,/net/netscratch/yjia305/cutlass_fresh,torch_cutlass_test_conv_ext_v1
+mobilenet,cutlass_test,20,2000,18.261332654953,21.785423278808594,21.81177520751953,0.0,False,True,735,357,0,/net/netscratch/yjia305/cutlass_test,torch_cutlass_test_conv_ext_v1
+mobilenet,intra_warp_taildup,20,2000,21.03370885848999,17.590128898620605,29.267168045043945,15.181675159863218,True,True,735,357,0,/net/netscratch/yjia305/cutlass_intra_warp,torch_cutlass_test_conv_ext_v1_taildup_print
+shufflenet,fresh,20,2000,14.144771242141724,12.720831871032715,19.985824584960938,-4.321260580704623,False,False,588,399,189,/net/netscratch/yjia305/cutlass_fresh,torch_cutlass_test_conv_ext_v1
+shufflenet,cutlass_test,20,2000,14.783609533309937,12.411584377288818,24.949920654296875,0.0,False,False,588,399,189,/net/netscratch/yjia305/cutlass_test,torch_cutlass_test_conv_ext_v1
+shufflenet,intra_warp_taildup,20,2000,14.86957278251648,13.324143886566162,20.22345542907715,0.5814767294337164,True,False,588,399,189,/net/netscratch/yjia305/cutlass_intra_warp,torch_cutlass_test_conv_ext_v1_taildup_print
