@@ -1,0 +1,39 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 68.84,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 27.61587142944336,
+  "mean_ms": 8.3493257188797,
+  "median_ms": 6.733216047286987,
+  "min_ms": 5.9331841468811035,
+  "model": "resnet",
+  "p95_ms": 17.61644744873047,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_taildup_decoupled_full/custom_conv_cutlass_test_resnet",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 834.93257188797,
+  "usage_stats": {
+    "direct_calls": 0,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 2121
+  },
+  "wall_s": 1.7958322861231863
+}
+Collecting data...
+Generating '/tmp/nsys-report-71d4.qdstrm'
+[1/1] [0%                          ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [0%                          ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [7%                          ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [11%                         ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [=15%                        ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [==18%                       ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [===22%                      ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [====25%                     ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [=====29%                    ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [=====32%                    ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [=======36%                  ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [=======39%                  ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [========42%                 ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [=========46%                ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [===========50%              ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [============56%             ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [============57%             ] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [========================100%] resnet_custom_conv_cutlass_test.nsys-rep[1/1] [========================100%] resnet_custom_conv_cutlass_test.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_taildup_decoupled_full/resnet_custom_conv_cutlass_test.nsys-rep

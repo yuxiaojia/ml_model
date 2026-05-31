@@ -1,0 +1,39 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 72.62,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 50.65158462524414,
+  "mean_ms": 21.911827850341798,
+  "median_ms": 20.36030387878418,
+  "min_ms": 17.251903533935547,
+  "model": "shufflenet",
+  "p95_ms": 32.38844680786133,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_taildup_decoupled_full/custom_conv_cutlass_test_shufflenet",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_taildup",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "True",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": false,
+  "tail_dup": true,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 2191.1827850341797,
+  "usage_stats": {
+    "direct_calls": 1919,
+    "fallback_calls": 909,
+    "modules_replaced": 0,
+    "standalone_calls": 2828
+  },
+  "wall_s": 2.571387058123946
+}
+Collecting data...
+Generating '/tmp/nsys-report-a96a.qdstrm'
+[1/1] [0%                          ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [0%                          ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [5%                          ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [7%                          ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [10%                         ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [13%                         ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [=15%                        ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [==18%                       ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [==21%                       ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [===23%                      ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [====26%                     ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [=====29%                    ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [=====32%                    ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [======35%                   ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [=======39%                  ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [=========43%                ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [==========48%               ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [===========53%              ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [============57%             ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [=============60%            ] shufflenet_intra_warp_taildup.nsys-rep[1/1] [========================100%] shufflenet_intra_warp_taildup.nsys-rep[1/1] [========================100%] shufflenet_intra_warp_taildup.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_taildup_decoupled_full/shufflenet_intra_warp_taildup.nsys-rep

@@ -1,0 +1,39 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 74.31,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 50.27964782714844,
+  "mean_ms": 18.40775332450867,
+  "median_ms": 15.552688121795654,
+  "min_ms": 12.730688095092773,
+  "model": "mobilenet",
+  "p95_ms": 28.537599563598633,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_taildup_decoupled_full/custom_conv_cutlass_test_mobilenet",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1840.7753324508667,
+  "usage_stats": {
+    "direct_calls": 1717,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 3535
+  },
+  "wall_s": 2.3288892139680684
+}
+Collecting data...
+Generating '/tmp/nsys-report-97d2.qdstrm'
+[1/1] [0%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [0%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [5%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [6%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [7%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [6%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [5%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [5%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [5%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [9%                          ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [12%                         ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [=15%                        ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [==18%                       ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [==20%                       ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [===23%                      ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [====26%                     ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [=====29%                    ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [=====32%                    ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [======35%                   ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [=======38%                  ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [========42%                 ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [==========47%               ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [===========52%              ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [============57%             ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [=============60%            ] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [========================100%] mobilenet_custom_conv_cutlass_test.nsys-rep[1/1] [========================100%] mobilenet_custom_conv_cutlass_test.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_taildup_decoupled_full/mobilenet_custom_conv_cutlass_test.nsys-rep

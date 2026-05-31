@@ -1,0 +1,39 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 72.62,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 52.83107376098633,
+  "mean_ms": 21.413151731491087,
+  "median_ms": 18.891871452331543,
+  "min_ms": 14.703392028808594,
+  "model": "shufflenet",
+  "p95_ms": 33.042110443115234,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_taildup_decoupled_full/custom_conv_cutlass_test_shufflenet",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": false,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 2141.315173149109,
+  "usage_stats": {
+    "direct_calls": 1919,
+    "fallback_calls": 909,
+    "modules_replaced": 0,
+    "standalone_calls": 2828
+  },
+  "wall_s": 2.5593392462469637
+}
+Collecting data...
+Generating '/tmp/nsys-report-ffaa.qdstrm'
+[1/1] [0%                          ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [0%                          ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [5%                          ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [8%                          ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [11%                         ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [14%                         ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [=17%                        ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [==20%                       ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [===22%                      ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [====26%                     ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [=====29%                    ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [=====32%                    ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [======35%                   ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [=======38%                  ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [========42%                 ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [==========47%               ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [===========51%              ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [============56%             ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [=============60%            ] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [========================100%] shufflenet_custom_conv_cutlass_test.nsys-rep[1/1] [========================100%] shufflenet_custom_conv_cutlass_test.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_taildup_decoupled_full/shufflenet_custom_conv_cutlass_test.nsys-rep

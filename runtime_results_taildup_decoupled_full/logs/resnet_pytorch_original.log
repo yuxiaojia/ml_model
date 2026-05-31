@@ -1,0 +1,20 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 68.82,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 18.24140739440918,
+  "mean_ms": 3.9320127964019775,
+  "median_ms": 3.7590880393981934,
+  "min_ms": 2.1730239391326904,
+  "model": "resnet",
+  "p95_ms": 3.9323201179504395,
+  "samples": 10000,
+  "setup": "pytorch_original",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 393.20127964019775,
+  "wall_s": 1.517729870043695
+}

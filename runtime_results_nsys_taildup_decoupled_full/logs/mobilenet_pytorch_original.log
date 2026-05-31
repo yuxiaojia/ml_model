@@ -1,0 +1,25 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 74.3,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 58.225982666015625,
+  "mean_ms": 14.825813102722169,
+  "median_ms": 12.083248138427734,
+  "min_ms": 7.067232131958008,
+  "model": "mobilenet",
+  "p95_ms": 26.41324806213379,
+  "samples": 10000,
+  "setup": "pytorch_original",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1482.5813102722168,
+  "wall_s": 2.196012652013451
+}
+Collecting data...
+Generating '/tmp/nsys-report-fd3e.qdstrm'
+[1/1] [0%                          ] mobilenet_pytorch_original.nsys-rep[1/1] [0%                          ] mobilenet_pytorch_original.nsys-rep[1/1] [5%                          ] mobilenet_pytorch_original.nsys-rep[1/1] [10%                         ] mobilenet_pytorch_original.nsys-rep[1/1] [=15%                        ] mobilenet_pytorch_original.nsys-rep[1/1] [==21%                       ] mobilenet_pytorch_original.nsys-rep[1/1] [====26%                     ] mobilenet_pytorch_original.nsys-rep[1/1] [=====32%                    ] mobilenet_pytorch_original.nsys-rep[1/1] [=======36%                  ] mobilenet_pytorch_original.nsys-rep[1/1] [========42%                 ] mobilenet_pytorch_original.nsys-rep[1/1] [==========47%               ] mobilenet_pytorch_original.nsys-rep[1/1] [===========52%              ] mobilenet_pytorch_original.nsys-rep[1/1] [=============58%            ] mobilenet_pytorch_original.nsys-rep[1/1] [==============63%           ] mobilenet_pytorch_original.nsys-rep[1/1] [================68%         ] mobilenet_pytorch_original.nsys-rep[1/1] [=================74%        ] mobilenet_pytorch_original.nsys-rep[1/1] [========================100%] mobilenet_pytorch_original.nsys-rep[1/1] [========================100%] mobilenet_pytorch_original.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_taildup_decoupled_full/mobilenet_pytorch_original.nsys-rep

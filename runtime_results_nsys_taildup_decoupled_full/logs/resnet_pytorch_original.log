@@ -1,0 +1,25 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 68.84,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 18.877887725830078,
+  "mean_ms": 6.435053749084473,
+  "median_ms": 5.8549439907073975,
+  "min_ms": 3.3889920711517334,
+  "model": "resnet",
+  "p95_ms": 8.473759651184082,
+  "samples": 10000,
+  "setup": "pytorch_original",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 643.5053749084473,
+  "wall_s": 1.755462140776217
+}
+Collecting data...
+Generating '/tmp/nsys-report-a0c1.qdstrm'
+[1/1] [0%                          ] resnet_pytorch_original.nsys-rep[1/1] [0%                          ] resnet_pytorch_original.nsys-rep[1/1] [5%                          ] resnet_pytorch_original.nsys-rep[1/1] [11%                         ] resnet_pytorch_original.nsys-rep[1/1] [====28%                     ] resnet_pytorch_original.nsys-rep[1/1] [===========51%              ] resnet_pytorch_original.nsys-rep[1/1] [================71%         ] resnet_pytorch_original.nsys-rep[1/1] [========================100%] resnet_pytorch_original.nsys-rep[1/1] [========================100%] resnet_pytorch_original.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_taildup_decoupled_full/resnet_pytorch_original.nsys-rep
