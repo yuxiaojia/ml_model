@@ -1,1 +1,1 @@
-launch_index,fresh_kernel_name,cutlass_test_kernel_name
+launch_index,custom_conv_fresh_kernel_name,custom_conv_cutlass_test_kernel_name
