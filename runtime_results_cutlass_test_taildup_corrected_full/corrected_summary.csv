@@ -1,0 +1,4 @@
+model,baseline_mean_ms,wrong_intra_warp_mean_ms,correct_taildup_mean_ms,correct_overhead_vs_baseline_pct,wrong_overhead_vs_baseline_pct,timed_batches,samples,cutlass_dir,extension_name,tail_dup,tail_dup_print,runtime_tail_duplicate,runtime_tail_duplicate_print
+resnet,5.846821126937866,6.068638725280762,10.389301137924194,77.69144826507366,3.7938153661127627,100,10000,/net/netscratch/yjia305/cutlass_test,torch_cutlass_test_conv_ext_v1_taildup,True,False,True,False
+mobilenet,13.973929014205932,14.26206202507019,18.695494480133057,33.78838879979402,2.0619326931698323,100,10000,/net/netscratch/yjia305/cutlass_test,torch_cutlass_test_conv_ext_v1_taildup,True,False,True,False
+shufflenet,13.55943808555603,13.698496341705322,14.965492835044861,10.369565026345807,1.025545861649113,100,10000,/net/netscratch/yjia305/cutlass_test,torch_cutlass_test_conv_ext_v1_taildup,True,False,True,False

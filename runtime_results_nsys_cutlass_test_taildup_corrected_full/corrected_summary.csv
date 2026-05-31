@@ -1,0 +1,4 @@
+model,correct_taildup_event_mean_ms_under_nsys,correct_taildup_nvtx_mean_ms,correct_taildup_gpu_kernel_total_ms,correct_taildup_standalone_conv_total_ms,correct_taildup_standalone_conv_count,baseline_event_mean_ms_under_nsys,taildup_event_overhead_vs_baseline_pct,timed_batches,samples,tail_dup,tail_dup_print,report
+resnet,10.989930543899536,8.99643451,910.308825,807.23411,2121,8.3493257188797,31.626563796030105,100,10000,True,False,resnet_custom_conv_cutlass_test_taildup.nsys-rep
+mobilenet,20.30013999938965,17.64709288,1837.205101,873.209242,3535,18.40775332450867,10.280378281478807,100,10000,True,False,mobilenet_custom_conv_cutlass_test_taildup.nsys-rep
+shufflenet,21.39493755340576,21.385926960000003,849.882018,381.748584,2828,21.413151731491087,-0.08506070621328021,100,10000,True,False,shufflenet_custom_conv_cutlass_test_taildup.nsys-rep
