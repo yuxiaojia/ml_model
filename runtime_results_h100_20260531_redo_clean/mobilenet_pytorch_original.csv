@@ -1,0 +1,2 @@
+accuracy_pct,batch_size,device,max_ms,mean_ms,median_ms,min_ms,model,p95_ms,samples,setup,strict,tail_dup,tail_dup_print,timed_batches,total_forward_ms,wall_s
+74.3,100,NVIDIA H100 80GB HBM3,13.066816329956055,3.666832003593445,3.257583975791931,3.118880033493042,mobilenet,4.622655868530273,10000,pytorch_original,True,False,False,100,366.6832003593445,0.8978629439952783

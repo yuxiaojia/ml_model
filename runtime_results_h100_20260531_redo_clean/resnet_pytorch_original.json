@@ -1,0 +1,19 @@
+{
+  "accuracy_pct": 68.83,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 13.23526382446289,
+  "mean_ms": 1.7796758377552033,
+  "median_ms": 1.6202239990234375,
+  "min_ms": 1.496832013130188,
+  "model": "resnet",
+  "p95_ms": 2.133631944656372,
+  "samples": 10000,
+  "setup": "pytorch_original",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 177.96758377552032,
+  "wall_s": 0.8659843080095015
+}

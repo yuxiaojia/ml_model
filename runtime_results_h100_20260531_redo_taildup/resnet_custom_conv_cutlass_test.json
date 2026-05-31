@@ -1,0 +1,33 @@
+{
+  "accuracy_pct": 68.85,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 19.62188720703125,
+  "mean_ms": 19.314156188964844,
+  "median_ms": 19.309328079223633,
+  "min_ms": 19.182016372680664,
+  "model": "resnet",
+  "p95_ms": 19.462879180908203,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_h100_20260531_redo_taildup/custom_conv_cutlass_test_resnet",
+    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_taildup",
+    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "True",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": true,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1931.4156188964844,
+  "usage_stats": {
+    "direct_calls": 0,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 2121
+  },
+  "wall_s": 2.608821966976393
+}

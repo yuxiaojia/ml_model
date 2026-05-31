@@ -1,0 +1,13 @@
+model,setup,result_dir,tail_duplicate,tail_duplicate_print,mean_ms,median_ms,p95_ms,accuracy,direct_calls,standalone_calls,fallback_calls,relative_to_clean_cutlass_test,delta_vs_clean_cutlass_test
+resnet,pytorch_original,runtime_results_h100_20260531_redo_clean,false,false,1.780,1.620,2.134,68.83,,,,,
+resnet,custom_conv_fresh,runtime_results_h100_20260531_redo_clean,false,false,6.290,5.957,7.256,68.85,0,2121,0,0.93x,-7.0%
+resnet,custom_conv_cutlass_test_clean,runtime_results_h100_20260531_redo_clean,false,false,6.760,5.909,14.735,68.85,0,2121,0,1.00x,0.0%
+resnet,custom_conv_cutlass_test_taildup,runtime_results_h100_20260531_redo_taildup,true,false,19.314,19.309,19.463,68.85,0,2121,0,2.86x,+185.7%
+mobilenet,pytorch_original,runtime_results_h100_20260531_redo_clean,false,false,3.667,3.258,4.623,74.30,,,,,
+mobilenet,custom_conv_fresh,runtime_results_h100_20260531_redo_clean,false,false,13.009,12.993,13.065,74.30,1717,3535,0,0.99x,-1.0%
+mobilenet,custom_conv_cutlass_test_clean,runtime_results_h100_20260531_redo_clean,false,false,13.144,12.996,13.166,74.30,1717,3535,0,1.00x,0.0%
+mobilenet,custom_conv_cutlass_test_taildup,runtime_results_h100_20260531_redo_taildup,true,false,28.895,28.887,29.002,74.30,1717,3535,0,2.20x,+119.8%
+shufflenet,pytorch_original,runtime_results_h100_20260531_redo_clean,false,false,5.201,3.670,14.191,72.64,,,,,
+shufflenet,custom_conv_fresh,runtime_results_h100_20260531_redo_clean,false,false,7.088,6.187,15.496,72.63,1919,2828,909,0.98x,-1.6%
+shufflenet,custom_conv_cutlass_test_clean,runtime_results_h100_20260531_redo_clean,false,false,7.204,6.218,15.387,72.63,1919,2828,909,1.00x,0.0%
+shufflenet,custom_conv_cutlass_test_taildup,runtime_results_h100_20260531_redo_taildup,true,false,16.249,16.046,17.215,72.63,1919,2828,909,2.26x,+125.5%
