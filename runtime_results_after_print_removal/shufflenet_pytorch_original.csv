@@ -1,0 +1,2 @@
+accuracy_pct,batch_size,device,max_ms,mean_ms,median_ms,min_ms,model,p95_ms,samples,setup,strict,tail_dup_print,timed_batches,total_forward_ms,wall_s
+72.64,100,NVIDIA A100-PCIE-40GB,19.385568618774414,9.551426901817322,9.301551818847656,5.414400100708008,shufflenet,10.769632339477539,10000,pytorch_original,True,False,100,955.1426901817322,1.8797376621514559

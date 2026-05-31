@@ -1,0 +1,2 @@
+accuracy_pct,batch_size,device,max_ms,mean_ms,median_ms,min_ms,model,p95_ms,samples,setup,strict,tail_dup_print,timed_batches,total_forward_ms,wall_s
+74.31,100,NVIDIA A100-PCIE-40GB,26.12998390197754,13.862780427932739,12.574399948120117,12.469183921813965,mobilenet,21.822847366333008,10000,custom_conv_cutlass_test,True,False,100,1386.278042793274,2.0427400320768356

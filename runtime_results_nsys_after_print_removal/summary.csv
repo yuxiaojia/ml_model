@@ -1,0 +1,10 @@
+model,setup,event_mean_ms_under_nsys,nvtx_batch_mean_ms,nvtx_batch_total_ms,gpu_kernel_total_ms,gpu_kernel_count,standalone_cutlass_conv_total_ms,standalone_cutlass_conv_count,nvtx_overhead_pct_vs_pytorch,standalone_calls,direct_calls,fallback_calls,strict,tail_dup_print,nsys_rep
+resnet,pytorch_original,6.094762580394745,6.1823638899999995,618.236389,148.656442,16330,0.0,0,0.0,,,,True,False,resnet_pytorch_original.nsys-rep
+resnet,custom_conv_fresh,7.992232007980347,8.02195626,802.195626,601.051644,16459,452.230736,2121,29.755485162812057,2121,0,0,True,False,resnet_custom_conv_fresh.nsys-rep
+resnet,custom_conv_cutlass_test,7.736330218315125,7.764886,776.4886,622.157882,16459,467.541341,2121,25.597362726573515,2121,0,0,True,False,resnet_custom_conv_cutlass_test.nsys-rep
+mobilenet,pytorch_original,15.63506437778473,15.74925437,1574.925437,1087.006881,49704,0.0,0,0.0,,,,True,False,mobilenet_pytorch_original.nsys-rep
+mobilenet,custom_conv_fresh,18.437954292297363,18.08728984,1808.728984,1309.923101,35346,344.678704,3535,14.845372454289718,3535,1717,0,True,False,mobilenet_custom_conv_fresh.nsys-rep
+mobilenet,custom_conv_cutlass_test,18.617660779953003,18.05323824,1805.323824,1342.18743,35346,354.001017,3535,14.629161583603278,3535,1717,0,True,False,mobilenet_custom_conv_cutlass_test.nsys-rep
+shufflenet,pytorch_original,16.8724854183197,17.072396039999997,1707.239604,486.720468,32320,0.0,0,0.0,,,,True,False,shufflenet_pytorch_original.nsys-rep
+shufflenet,custom_conv_fresh,22.041573696136474,22.09757712,2209.757712,823.753517,39833,247.071903,2828,29.43453905489415,2828,1919,909,False,False,shufflenet_custom_conv_fresh.nsys-rep
+shufflenet,custom_conv_cutlass_test,21.62160656929016,21.680456539999998,2168.045654,836.536451,39833,250.366425,2828,26.99129336739543,2828,1919,909,False,False,shufflenet_custom_conv_cutlass_test.nsys-rep

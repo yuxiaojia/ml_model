@@ -1,0 +1,18 @@
+{
+  "accuracy_pct": 74.3,
+  "batch_size": 100,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 45.2031364440918,
+  "mean_ms": 15.63506437778473,
+  "median_ms": 12.418479919433594,
+  "min_ms": 7.328320026397705,
+  "model": "mobilenet",
+  "p95_ms": 30.31920051574707,
+  "samples": 10000,
+  "setup": "pytorch_original",
+  "strict": true,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1563.506437778473,
+  "wall_s": 2.2355282297357917
+}
