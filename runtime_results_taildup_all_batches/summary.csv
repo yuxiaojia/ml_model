@@ -1,0 +1,4 @@
+model,timed_batches,samples,marker_count,standalone_calls,direct_calls,fallback_calls,mean_ms_with_printf,extension_name,tail_duplicate_print,strict
+resnet,100,10000,2100,2100,0,0,587.3057904720306,torch_cutlass_test_conv_ext_v1_taildup_print,True,True
+mobilenet,100,10000,3500,3500,1700,0,589.4043654060364,torch_cutlass_test_conv_ext_v1_taildup_print,True,True
+shufflenet,100,10000,2800,2800,1900,900,618.4165608406067,torch_cutlass_test_conv_ext_v1_taildup_print,True,False
