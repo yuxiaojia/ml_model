@@ -1,0 +1,31 @@
+{
+  "accuracy_pct": 74.3,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 13.427712440490723,
+  "mean_ms": 12.988365430831909,
+  "median_ms": 12.965359687805176,
+  "min_ms": 12.921152114868164,
+  "model": "mobilenet",
+  "p95_ms": 13.090975761413574,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_h100_20260531_build_clean/custom_conv_cutlass_test_mobilenet",
+    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1298.836543083191,
+  "usage_stats": {
+    "direct_calls": 1717,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 3535
+  },
+  "wall_s": 1.573953862010967
+}

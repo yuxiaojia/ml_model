@@ -1,0 +1,13 @@
+result_set,model,setup,tail_dup_print,mean_ms,median_ms,p95_ms,accuracy_pct,direct_calls,standalone_calls,fallback_calls
+clean,mobilenet,custom_conv_cutlass_test,false,12.988,12.965,13.091,74.30,1717,3535,0
+clean,mobilenet,custom_conv_fresh,false,12.961,12.941,13.061,74.30,1717,3535,0
+clean,mobilenet,pytorch_original,false,3.618,3.222,4.210,74.30,,,
+clean,resnet,custom_conv_cutlass_test,false,6.233,5.925,6.381,68.85,0,2121,0
+clean,resnet,custom_conv_fresh,false,6.003,5.952,6.111,68.85,0,2121,0
+clean,resnet,pytorch_original,false,1.694,1.638,2.266,68.83,,,
+clean,shufflenet,custom_conv_cutlass_test,false,7.213,6.150,14.050,72.63,1919,2828,909
+clean,shufflenet,custom_conv_fresh,false,5.237,3.966,14.676,72.64,0,0,5656
+clean,shufflenet,pytorch_original,false,4.914,3.734,14.763,72.64,,,
+taildup_print,mobilenet,custom_conv_cutlass_test,true,28.869,28.854,28.979,74.30,1717,3535,0
+taildup_print,resnet,custom_conv_cutlass_test,true,19.385,19.380,19.531,68.85,0,2121,0
+taildup_print,shufflenet,custom_conv_cutlass_test,true,15.992,15.892,16.785,72.63,1919,2828,909
