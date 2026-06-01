@@ -38,12 +38,19 @@ Key questions:
 | PyTorch | Original framework conv path |
 | cutlass_fresh | Standalone CUTLASS Conv2D wrapper, no taildup modification |
 | cutlass_test | Modified CUTLASS checkout, taildup-capable but taildup disabled |
-| cutlass_test + taildup | Same `cutlass_test` checkout with `--tail-dup` enabled |
+| cutlass_test + previous taildup | Same `cutlass_test` checkout with `--tail-dup` enabled |
+| CTA duplication | New `intra-warp-duplication` branch with CTA duplicate macro enabled |
 
-Taildup is **not** a separate repo. It is:
+Previous taildup is **not** a separate repo. It is:
 
 ```text
 cutlass_test + --tail-dup
+```
+
+CTA duplication is enabled by:
+
+```text
+NVCC_PREPEND_FLAGS=-DCUTLASS_ENABLE_IMPLICIT_GEMM_CTA_DUPLICATE=1
 ```
 
 ---
@@ -99,41 +106,60 @@ These rows are useful as the A100 baseline/control setup results.
 
 CUDA-event mean ms/batch, 100 timed batches.
 
-| model | PyTorch | cutlass_fresh | cutlass_test | cutlass_test + taildup |
-|---|---:|---:|---:|---:|
-| resnet | 1.780 | 6.290 | 6.760 | 19.271 |
-| mobilenet | 3.667 | 13.009 | 13.144 | 28.802 |
-| shufflenet | 5.201 | 7.088 | 7.204 | 16.092 |
+| model | PyTorch | cutlass_fresh | cutlass_test | previous taildup rerun | CTA duplication |
+|---|---:|---:|---:|---:|---:|
+| resnet | 1.780 | 6.290 | 6.760 | 19.264 | 15.929 |
+| mobilenet | 3.667 | 13.009 | 13.144 | 28.922 | 25.824 |
+| shufflenet | 5.201 | 7.088 | 7.204 | 15.940 | 15.240 |
 
 Main observations:
 
 - `cutlass_fresh` and clean `cutlass_test` are close.
-- Taildup adds substantial overhead in the current implementation.
+- Previous taildup adds substantial overhead in the current implementation.
+- CTA duplication is lower than previous taildup, but still much slower than clean `cutlass_test`.
 - PyTorch remains fastest for these small CIFAR models on H100.
 
 ---
 
-# H100 Taildup Overhead
+# H100 Previous Taildup Rerun
 
-Taildup overhead relative to clean `cutlass_test`.
+Previous taildup overhead relative to clean `cutlass_test`.
 
 | model | clean cutlass_test | taildup | overhead |
 |---|---:|---:|---:|
-| resnet | 6.760 | 19.271 | +185.09% |
-| mobilenet | 13.144 | 28.802 | +119.13% |
-| shufflenet | 7.204 | 16.092 | +123.39% |
+| resnet | 6.760 | 19.264 | +184.99% |
+| mobilenet | 13.144 | 28.922 | +120.04% |
+| shufflenet | 7.204 | 15.940 | +121.27% |
 
 Interpretation:
 
-- ResNet has the largest relative overhead.
-- MobileNet and ShuffleNet also roughly double.
-- These numbers reflect the currently built diagnostic taildup path.
+- The rerun reproduces the earlier high overhead.
+- Rerun vs old run changed by less than 1% for all three models.
+- The old taildup path still emitted diagnostics during the rerun even with `tail_dup_print=False`.
+
+---
+
+# H100 CTA Duplication
+
+CTA duplication overhead relative to clean `cutlass_test`.
+
+| model | clean cutlass_test | CTA duplication | overhead | vs previous taildup rerun |
+|---|---:|---:|---:|---:|
+| resnet | 6.760 | 15.929 | +135.65% | -17.31% |
+| mobilenet | 13.144 | 25.824 | +96.47% | -10.71% |
+| shufflenet | 7.204 | 15.240 | +111.55% | -4.39% |
+
+Interpretation:
+
+- CTA duplication is consistently faster than previous taildup.
+- It is still far slower than clean `cutlass_test`.
+- This branch currently implements CTA/launch-level duplication, not true warp-level HMMA duplication.
 
 ---
 
 # Fallback and Coverage
 
-100 timed batches, H100 taildup run.
+100 timed batches, H100 previous-taildup rerun.
 
 | model | standalone calls | direct calls | fallback calls | strict |
 |---|---:|---:|---:|---|
@@ -246,10 +272,11 @@ without:
 Main conclusions:
 
 - A100 clean setup results are available for PyTorch, `cutlass_fresh`, and `cutlass_test`.
-- H100 clean and taildup setup results are available.
+- H100 clean, previous-taildup rerun, and CTA-duplication results are available.
 - Custom CUTLASS wrapper behavior is model-dependent.
 - Clean `cutlass_fresh` and clean `cutlass_test` are close on both GPUs.
-- Taildup currently adds large overhead on H100.
+- Previous taildup currently adds large overhead on H100, and the rerun confirms it.
+- CTA duplication reduces overhead relative to previous taildup, but remains slower than clean `cutlass_test`.
 - ResNet and MobileNet have zero fallback; ShuffleNet has fallback.
 - Nsight validates behavior, but CUDA events should be used for overhead claims.
 
@@ -262,6 +289,7 @@ Recommended follow-up experiments:
 - Rerun A100 taildup with `--tail-dup` and no `--tail-dup-print`.
 - Rerun H100 clean PyTorch/fresh/cutlass_test under Nsight for a complete H100 profiler-context table.
 - Remove or disable diagnostic output path from taildup builds.
+- Implement true warp-level HMMA duplication if that is the intended next mechanism.
 - Optimize H100-specific CUTLASS configuration.
 - Break down overhead by layer/kernel type.
 
@@ -280,12 +308,26 @@ Main summaries:
 ```text
 a100_h100_comparison_20260531.md
 h100_cuda_nsys_variant_comparison_20260531.md
+h100_cta_dup_results_20260601.md
+h100_previous_taildup_rerun_20260601.md
 ```
 
-H100 taildup CUDA-event results:
+H100 previous-taildup rerun CUDA-event results:
+
+```text
+runtime_results_h100_20260601_previous_taildup_rerun_cuda_event/
+```
+
+H100 previous-taildup old CUDA-event results:
 
 ```text
 runtime_results_h100_20260531_taildup_cuda_event_1747/
+```
+
+H100 CTA-duplication CUDA-event results:
+
+```text
+runtime_results_h100_20260601_cta_dup_cuda_event/
 ```
 
 H100 taildup Nsight results:
