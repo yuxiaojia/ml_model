@@ -1,0 +1,35 @@
+{
+  "accuracy_pct": 76.0,
+  "batch_size": 100,
+  "cta_dup": true,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 55906.80078125,
+  "mean_ms": 55906.80078125,
+  "median_ms": 55906.80078125,
+  "min_ms": 55906.80078125,
+  "model": "mobilenet",
+  "p95_ms": 55906.80078125,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_cta_dup_compile_test/custom_conv_cutlass_test_mobilenet",
+    "cta_duplicate": "True",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_ctadup",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 100,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 1,
+  "total_forward_ms": 55906.80078125,
+  "usage_stats": {
+    "direct_calls": 17,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 35
+  },
+  "wall_s": 56.02477371832356
+}

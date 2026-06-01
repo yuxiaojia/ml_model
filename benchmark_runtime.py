@@ -33,6 +33,7 @@ def configure_env(
     strict: bool,
     tail_dup: bool,
     tail_dup_print: bool,
+    cta_dup: bool,
 ) -> None:
     os.environ["USE_TORCH_COMPILE"] = "0"
     os.environ.setdefault("CUDA_MODULE_LOADING", "LAZY")
@@ -49,6 +50,7 @@ def configure_env(
     os.environ["STANDALONE_CUTLASS_BUILD_DIR"] = str(build_dir)
     os.environ["STANDALONE_CUTLASS_TAIL_DUP"] = "1" if (tail_dup or tail_dup_print) else "0"
     os.environ["STANDALONE_CUTLASS_TAIL_DUP_PRINT"] = "1" if tail_dup_print else "0"
+    os.environ["STANDALONE_CUTLASS_CTA_DUP"] = "1" if cta_dup else "0"
 
 
 def import_setup(bench_root: Path, setup: str) -> None:
@@ -103,7 +105,7 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
     cutlass_dir = cutlass_dir.resolve() if cutlass_dir is not None else None
     build_dir = (args.build_root / f"{args.setup}_{args.model}").resolve()
 
-    configure_env(args.setup, cutlass_dir, build_dir, args.strict, args.tail_dup, args.tail_dup_print)
+    configure_env(args.setup, cutlass_dir, build_dir, args.strict, args.tail_dup, args.tail_dup_print, args.cta_dup)
     import_setup(args.bench_root, args.setup)
 
     import torch
@@ -179,6 +181,7 @@ def run_one(args: argparse.Namespace) -> dict[str, object]:
         "strict": args.strict,
         "tail_dup": args.tail_dup or args.tail_dup_print,
         "tail_dup_print": args.tail_dup_print,
+        "cta_dup": args.cta_dup,
         "samples": total,
         "accuracy_pct": 100.0 * correct / max(total, 1),
         "wall_s": time.perf_counter() - wall_start,
@@ -224,6 +227,7 @@ def main() -> None:
     parser.add_argument("--no-strict", dest="strict", action="store_false")
     parser.add_argument("--tail-dup", action="store_true", help="Enable tail-duplicate HMMA/check without device printf.")
     parser.add_argument("--tail-dup-print", action="store_true")
+    parser.add_argument("--cta-dup", action="store_true", help="Enable CTA/launch-level duplicate compare without device printf.")
     args = parser.parse_args()
 
     args.bench_root = args.bench_root.resolve()
