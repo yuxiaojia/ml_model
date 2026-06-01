@@ -1,0 +1,33 @@
+{
+  "accuracy_pct": 72.63,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 35.38768005371094,
+  "mean_ms": 19.57678331375122,
+  "median_ms": 19.160991668701172,
+  "min_ms": 18.45030403137207,
+  "model": "shufflenet",
+  "p95_ms": 20.773727416992188,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_h100_20260601_cta_dup/custom_conv_cutlass_test_shufflenet",
+    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": false,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1957.678331375122,
+  "usage_stats": {
+    "direct_calls": 1919,
+    "fallback_calls": 909,
+    "modules_replaced": 0,
+    "standalone_calls": 2828
+  },
+  "wall_s": 2.138136467023287
+}

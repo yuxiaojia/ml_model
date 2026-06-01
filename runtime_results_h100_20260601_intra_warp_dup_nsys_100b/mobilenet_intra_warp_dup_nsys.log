@@ -1,39 +1,0 @@
-Using cache found in /home/hice1/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
-{
-  "accuracy_pct": 74.3,
-  "batch_size": 100,
-  "device": "NVIDIA H100 80GB HBM3",
-  "max_ms": 13.693599700927734,
-  "mean_ms": 13.131176948547363,
-  "median_ms": 13.11622428894043,
-  "min_ms": 13.078656196594238,
-  "model": "mobilenet",
-  "p95_ms": 13.195072174072266,
-  "runtime_config": {
-    "build_dir": "/tmp/ml_bench_h100_20260601_intra_warp_dup/custom_conv_cutlass_test_mobilenet",
-    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup",
-    "extension_name": "torch_cutlass_test_conv_ext_v1_taildup",
-    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
-    "tail_duplicate": "True",
-    "tail_duplicate_print": "False"
-  },
-  "samples": 10000,
-  "setup": "custom_conv_cutlass_test",
-  "strict": true,
-  "tail_dup": true,
-  "tail_dup_print": false,
-  "timed_batches": 100,
-  "total_forward_ms": 1313.1176948547363,
-  "usage_stats": {
-    "direct_calls": 1717,
-    "fallback_calls": 0,
-    "modules_replaced": 0,
-    "standalone_calls": 3535
-  },
-  "wall_s": 1.5372580260154791
-}
-Collecting data...
-Generating '/tmp/nsys-report-b452.qdstrm'
-[1/1] [0%                          ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [0%                          ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [7%                          ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [=15%                        ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [===23%                      ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [=====31%                    ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [========40%                 ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [==========48%               ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [===========51%              ] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [========================100%] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [========================100%] mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep
-Generated:
-	/storage/ice1/0/3/yjia305/2026_SUMMER/ml_bench/runtime_results_h100_20260601_intra_warp_dup_nsys_100b/mobilenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep

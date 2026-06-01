@@ -1,0 +1,2 @@
+accuracy_pct,batch_size,device,max_ms,mean_ms,median_ms,min_ms,model,p95_ms,samples,setup,strict,tail_dup,tail_dup_print,timed_batches,total_forward_ms,wall_s
+68.85,100,NVIDIA H100 80GB HBM3,21.579551696777344,16.721607704162597,16.538288116455078,15.947999954223633,resnet,17.670591354370117,10000,custom_conv_cutlass_test,True,False,False,100,1672.1607704162598,1.8393846330000088

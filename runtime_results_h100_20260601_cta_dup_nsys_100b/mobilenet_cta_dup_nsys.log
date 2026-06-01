@@ -1,0 +1,39 @@
+Using cache found in /home/hice1/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 74.3,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 40.18374252319336,
+  "mean_ms": 28.465125102996826,
+  "median_ms": 28.195280075073242,
+  "min_ms": 27.56332778930664,
+  "model": "mobilenet",
+  "p95_ms": 29.47702407836914,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_h100_20260601_cta_dup/custom_conv_cutlass_test_mobilenet",
+    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 2846.5125102996826,
+  "usage_stats": {
+    "direct_calls": 1717,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 3535
+  },
+  "wall_s": 2.9985662620165385
+}
+Collecting data...
+Generating '/tmp/nsys-report-e569.qdstrm'
+[1/1] [0%                          ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [0%                          ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [7%                          ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [11%                         ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [=15%                        ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [==19%                       ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [===23%                      ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [====27%                     ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [=====31%                    ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [======35%                   ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [=======39%                  ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [=========43%                ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [==========47%               ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [===========50%              ] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [========================100%] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep[1/1] [========================100%] mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep
+Generated:
+	/storage/ice1/0/3/yjia305/2026_SUMMER/ml_bench/runtime_results_h100_20260601_cta_dup_nsys_100b/mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep
