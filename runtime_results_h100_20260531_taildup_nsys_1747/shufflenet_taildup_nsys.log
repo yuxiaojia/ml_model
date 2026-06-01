@@ -1,0 +1,291 @@
+Using cache found in /home/hice1/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=1 tail_start=0 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0835  tail_dup=      0.0835  ==
+  reg[ 1] accum=      0.0458  tail_dup=      0.0458  ==
+  reg[ 2] accum=     -0.3411  tail_dup=     -0.3411  ==
+  reg[ 3] accum=      0.1725  tail_dup=      0.1725  ==
+  reg[ 4] accum=     -0.3247  tail_dup=     -0.3247  ==
+  reg[ 5] accum=      0.2072  tail_dup=      0.2072  ==
+  reg[ 6] accum=     -0.4629  tail_dup=     -0.4629  ==
+  reg[ 7] accum=      0.2301  tail_dup=      0.2301  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.5364  tail_dup=     -0.5364  ==
+  reg[ 1] accum=      0.3180  tail_dup=      0.3180  ==
+  reg[ 2] accum=     -0.2785  tail_dup=     -0.2785  ==
+  reg[ 3] accum=      0.0355  tail_dup=      0.0355  ==
+  reg[ 4] accum=     -0.2554  tail_dup=     -0.2554  ==
+  reg[ 5] accum=     -0.1306  tail_dup=     -0.1306  ==
+  reg[ 6] accum=     -0.1714  tail_dup=     -0.1714  ==
+  reg[ 7] accum=     -0.1419  tail_dup=     -0.1419  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0001  tail_dup=     -0.0001  ==
+  reg[ 1] accum=      0.1028  tail_dup=      0.1028  ==
+  reg[ 2] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 3] accum=      0.0592  tail_dup=      0.0592  ==
+  reg[ 4] accum=     -0.0002  tail_dup=     -0.0002  ==
+  reg[ 5] accum=      0.0882  tail_dup=      0.0882  ==
+  reg[ 6] accum=     -0.0001  tail_dup=     -0.0001  ==
+  reg[ 7] accum=      0.0228  tail_dup=      0.0228  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.2018  tail_dup=     -0.2018  ==
+  reg[ 1] accum=     -0.0871  tail_dup=     -0.0871  ==
+  reg[ 2] accum=     -0.1103  tail_dup=     -0.1103  ==
+  reg[ 3] accum=     -0.0348  tail_dup=     -0.0348  ==
+  reg[ 4] accum=     -0.1715  tail_dup=     -0.1715  ==
+  reg[ 5] accum=     -0.0800  tail_dup=     -0.0800  ==
+  reg[ 6] accum=     -0.1594  tail_dup=     -0.1594  ==
+  reg[ 7] accum=     -0.0062  tail_dup=     -0.0062  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 1] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 2] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 3] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 4] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 5] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 6] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 7] accum=      0.0001  tail_dup=      0.0001  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0330  tail_dup=      0.0330  ==
+  reg[ 1] accum=      0.1156  tail_dup=      0.1156  ==
+  reg[ 2] accum=     -0.0302  tail_dup=     -0.0302  ==
+  reg[ 3] accum=      0.0452  tail_dup=      0.0452  ==
+  reg[ 4] accum=     -0.0461  tail_dup=     -0.0461  ==
+  reg[ 5] accum=      0.0901  tail_dup=      0.0901  ==
+  reg[ 6] accum=     -0.0102  tail_dup=     -0.0102  ==
+  reg[ 7] accum=      0.2662  tail_dup=      0.2662  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0169  tail_dup=     -0.0169  ==
+  reg[ 1] accum=      0.0069  tail_dup=      0.0069  ==
+  reg[ 2] accum=     -0.0049  tail_dup=     -0.0049  ==
+  reg[ 3] accum=     -0.0009  tail_dup=     -0.0009  ==
+  reg[ 4] accum=     -0.0141  tail_dup=     -0.0141  ==
+  reg[ 5] accum=     -0.0092  tail_dup=     -0.0092  ==
+  reg[ 6] accum=     -0.0103  tail_dup=     -0.0103  ==
+  reg[ 7] accum=      0.0141  tail_dup=      0.0141  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.1327  tail_dup=      0.1327  ==
+  reg[ 1] accum=     -0.1239  tail_dup=     -0.1239  ==
+  reg[ 2] accum=      0.1244  tail_dup=      0.1244  ==
+  reg[ 3] accum=     -0.1208  tail_dup=     -0.1208  ==
+  reg[ 4] accum=      0.1151  tail_dup=      0.1151  ==
+  reg[ 5] accum=     -0.1254  tail_dup=     -0.1254  ==
+  reg[ 6] accum=      0.0024  tail_dup=      0.0024  ==
+  reg[ 7] accum=     -0.0617  tail_dup=     -0.0617  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0296  tail_dup=      0.0296  ==
+  reg[ 1] accum=     -0.0106  tail_dup=     -0.0106  ==
+  reg[ 2] accum=      0.0362  tail_dup=      0.0362  ==
+  reg[ 3] accum=     -0.0333  tail_dup=     -0.0333  ==
+  reg[ 4] accum=      0.0275  tail_dup=      0.0275  ==
+  reg[ 5] accum=     -0.0292  tail_dup=     -0.0292  ==
+  reg[ 6] accum=      0.0379  tail_dup=      0.0379  ==
+  reg[ 7] accum=     -0.0104  tail_dup=     -0.0104  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0253  tail_dup=     -0.0253  ==
+  reg[ 1] accum=     -0.0415  tail_dup=     -0.0415  ==
+  reg[ 2] accum=     -0.0224  tail_dup=     -0.0224  ==
+  reg[ 3] accum=      0.0092  tail_dup=      0.0092  ==
+  reg[ 4] accum=      0.0333  tail_dup=      0.0333  ==
+  reg[ 5] accum=      0.1555  tail_dup=      0.1555  ==
+  reg[ 6] accum=     -0.0118  tail_dup=     -0.0118  ==
+  reg[ 7] accum=      0.1938  tail_dup=      0.1938  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0066  tail_dup=     -0.0066  ==
+  reg[ 1] accum=      0.0069  tail_dup=      0.0069  ==
+  reg[ 2] accum=     -0.0039  tail_dup=     -0.0039  ==
+  reg[ 3] accum=      0.0048  tail_dup=      0.0048  ==
+  reg[ 4] accum=     -0.0224  tail_dup=     -0.0224  ==
+  reg[ 5] accum=      0.0063  tail_dup=      0.0063  ==
+  reg[ 6] accum=     -0.0257  tail_dup=     -0.0257  ==
+  reg[ 7] accum=      0.0036  tail_dup=      0.0036  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0250  tail_dup=     -0.0250  ==
+  reg[ 1] accum=     -0.0447  tail_dup=     -0.0447  ==
+  reg[ 2] accum=     -0.0638  tail_dup=     -0.0638  ==
+  reg[ 3] accum=     -0.0304  tail_dup=     -0.0304  ==
+  reg[ 4] accum=     -0.0693  tail_dup=     -0.0693  ==
+  reg[ 5] accum=     -0.0180  tail_dup=     -0.0180  ==
+  reg[ 6] accum=     -0.0976  tail_dup=     -0.0976  ==
+  reg[ 7] accum=     -0.0035  tail_dup=     -0.0035  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0075  tail_dup=      0.0075  ==
+  reg[ 1] accum=     -0.0148  tail_dup=     -0.0148  ==
+  reg[ 2] accum=      0.0008  tail_dup=      0.0008  ==
+  reg[ 3] accum=      0.0150  tail_dup=      0.0150  ==
+  reg[ 4] accum=      0.0055  tail_dup=      0.0055  ==
+  reg[ 5] accum=     -0.0041  tail_dup=     -0.0041  ==
+  reg[ 6] accum=     -0.0014  tail_dup=     -0.0014  ==
+  reg[ 7] accum=     -0.0027  tail_dup=     -0.0027  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0377  tail_dup=     -0.0377  ==
+  reg[ 1] accum=      0.0431  tail_dup=      0.0431  ==
+  reg[ 2] accum=      0.0189  tail_dup=      0.0189  ==
+  reg[ 3] accum=      0.0416  tail_dup=      0.0416  ==
+  reg[ 4] accum=      0.0504  tail_dup=      0.0504  ==
+  reg[ 5] accum=      0.0225  tail_dup=      0.0225  ==
+  reg[ 6] accum=      0.0053  tail_dup=      0.0053  ==
+  reg[ 7] accum=      0.0099  tail_dup=      0.0099  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.1025  tail_dup=     -0.1025  ==
+  reg[ 1] accum=     -0.0554  tail_dup=     -0.0554  ==
+  reg[ 2] accum=     -0.1237  tail_dup=     -0.1237  ==
+  reg[ 3] accum=     -0.0673  tail_dup=     -0.0673  ==
+  reg[ 4] accum=     -0.1183  tail_dup=     -0.1183  ==
+  reg[ 5] accum=     -0.0753  tail_dup=     -0.0753  ==
+  reg[ 6] accum=     -0.0772  tail_dup=     -0.0772  ==
+  reg[ 7] accum=     -0.0831  tail_dup=     -0.0831  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 1] accum=      0.0002  tail_dup=      0.0002  ==
+  reg[ 2] accum=      0.0001  tail_dup=      0.0001  ==
+  reg[ 3] accum=      0.0001  tail_dup=      0.0001  ==
+  reg[ 4] accum=      0.0001  tail_dup=      0.0001  ==
+  reg[ 5] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 6] accum=      0.0001  tail_dup=      0.0001  ==
+  reg[ 7] accum=     -0.0001  tail_dup=     -0.0001  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0007  tail_dup=     -0.0007  ==
+  reg[ 1] accum=     -0.0007  tail_dup=     -0.0007  ==
+  reg[ 2] accum=     -0.0018  tail_dup=     -0.0018  ==
+  reg[ 3] accum=     -0.0006  tail_dup=     -0.0006  ==
+  reg[ 4] accum=     -0.0014  tail_dup=     -0.0014  ==
+  reg[ 5] accum=     -0.0003  tail_dup=     -0.0003  ==
+  reg[ 6] accum=     -0.0056  tail_dup=     -0.0056  ==
+  reg[ 7] accum=     -0.0000  tail_dup=     -0.0000  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=4 tail_start=3 tail_iters=1 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0319  tail_dup=     -0.0319  ==
+  reg[ 1] accum=      0.0101  tail_dup=      0.0101  ==
+  reg[ 2] accum=      0.1160  tail_dup=      0.1160  ==
+  reg[ 3] accum=      0.0584  tail_dup=      0.0584  ==
+  reg[ 4] accum=      0.0766  tail_dup=      0.0766  ==
+  reg[ 5] accum=      0.0540  tail_dup=      0.0540  ==
+  reg[ 6] accum=     -0.0945  tail_dup=     -0.0945  ==
+  reg[ 7] accum=     -0.0376  tail_dup=     -0.0376  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0394  tail_dup=      0.0394  ==
+  reg[ 1] accum=      0.0032  tail_dup=      0.0032  ==
+  reg[ 2] accum=      0.0257  tail_dup=      0.0257  ==
+  reg[ 3] accum=      0.0808  tail_dup=      0.0808  ==
+  reg[ 4] accum=     -0.0719  tail_dup=     -0.0719  ==
+  reg[ 5] accum=      0.0896  tail_dup=      0.0896  ==
+  reg[ 6] accum=     -0.0434  tail_dup=     -0.0434  ==
+  reg[ 7] accum=      0.0792  tail_dup=      0.0792  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 1] accum=     -0.0001  tail_dup=     -0.0001  ==
+  reg[ 2] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 3] accum=     -0.0001  tail_dup=     -0.0001  ==
+  reg[ 4] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 5] accum=     -0.0001  tail_dup=     -0.0001  ==
+  reg[ 6] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 7] accum=     -0.0001  tail_dup=     -0.0001  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0215  tail_dup=      0.0215  ==
+  reg[ 1] accum=      0.0357  tail_dup=      0.0357  ==
+  reg[ 2] accum=     -0.0314  tail_dup=     -0.0314  ==
+  reg[ 3] accum=      0.0274  tail_dup=      0.0274  ==
+  reg[ 4] accum=      0.0300  tail_dup=      0.0300  ==
+  reg[ 5] accum=      0.0605  tail_dup=      0.0605  ==
+  reg[ 6] accum=     -0.0081  tail_dup=     -0.0081  ==
+  reg[ 7] accum=     -0.0287  tail_dup=     -0.0287  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0748  tail_dup=     -0.0748  ==
+  reg[ 1] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 2] accum=     -0.0343  tail_dup=     -0.0343  ==
+  reg[ 3] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 4] accum=     -0.0281  tail_dup=     -0.0281  ==
+  reg[ 5] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 6] accum=     -0.0700  tail_dup=     -0.0700  ==
+  reg[ 7] accum=     -0.0000  tail_dup=     -0.0000  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0024  tail_dup=      0.0024  ==
+  reg[ 1] accum=      0.0975  tail_dup=      0.0975  ==
+  reg[ 2] accum=     -0.0091  tail_dup=     -0.0091  ==
+  reg[ 3] accum=      0.1501  tail_dup=      0.1501  ==
+  reg[ 4] accum=      0.0612  tail_dup=      0.0612  ==
+  reg[ 5] accum=     -0.0225  tail_dup=     -0.0225  ==
+  reg[ 6] accum=      0.0030  tail_dup=      0.0030  ==
+  reg[ 7] accum=      0.1851  tail_dup=      0.1851  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 1] accum=     -0.1323  tail_dup=     -0.1323  ==
+  reg[ 2] accum=     -0.0000  tail_dup=     -0.0000  ==
+  reg[ 3] accum=     -0.1180  tail_dup=     -0.1180  ==
+  reg[ 4] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 5] accum=     -0.0959  tail_dup=     -0.0959  ==
+  reg[ 6] accum=      0.0000  tail_dup=      0.0000  ==
+  reg[ 7] accum=     -0.1453  tail_dup=     -0.1453  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=      0.0537  tail_dup=      0.0537  ==
+  reg[ 1] accum=     -0.0120  tail_dup=     -0.0120  ==
+  reg[ 2] accum=     -0.0217  tail_dup=     -0.0217  ==
+  reg[ 3] accum=     -0.0289  tail_dup=     -0.0289  ==
+  reg[ 4] accum=     -0.0831  tail_dup=     -0.0831  ==
+  reg[ 5] accum=      0.0069  tail_dup=      0.0069  ==
+  reg[ 6] accum=      0.0115  tail_dup=      0.0115  ==
+  reg[ 7] accum=      0.0150  tail_dup=      0.0150  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0001  tail_dup=     -0.0001  ==
+  reg[ 1] accum=     -0.0002  tail_dup=     -0.0002  ==
+  reg[ 2] accum=      0.0001  tail_dup=      0.0001  ==
+  reg[ 3] accum=     -0.0008  tail_dup=     -0.0008  ==
+  reg[ 4] accum=     -0.0002  tail_dup=     -0.0002  ==
+  reg[ 5] accum=     -0.0016  tail_dup=     -0.0016  ==
+  reg[ 6] accum=     -0.0002  tail_dup=     -0.0002  ==
+  reg[ 7] accum=     -0.0013  tail_dup=     -0.0013  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=8 tail_start=6 tail_iters=2 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0145  tail_dup=     -0.0145  ==
+  reg[ 1] accum=      0.0363  tail_dup=      0.0363  ==
+  reg[ 2] accum=     -0.0228  tail_dup=     -0.0228  ==
+  reg[ 3] accum=      0.0190  tail_dup=      0.0190  ==
+  reg[ 4] accum=     -0.0501  tail_dup=     -0.0501  ==
+  reg[ 5] accum=      0.0437  tail_dup=      0.0437  ==
+  reg[ 6] accum=     -0.1190  tail_dup=     -0.1190  ==
+  reg[ 7] accum=     -0.1893  tail_dup=     -0.1893  ==
+IMPLICIT_GEMM_PIPELINED_TAIL_CHECK_V2 carry_in_fixed direct_compare mismatch=0 total_gemm_k_iters=15 tail_start=11 tail_iters=4 warp_mma_iters_per_gemm=4 stages=2 staged_accum=0 elements=128
+  reg[ 0] accum=     -0.0053  tail_dup=     -0.0053  ==
+  reg[ 1] accum=     -0.0008  tail_dup=     -0.0008  ==
+  reg[ 2] accum=      0.0024  tail_dup=      0.0024  ==
+  reg[ 3] accum=     -0.0062  tail_dup=     -0.0062  ==
+  reg[ 4] accum=     -0.0149  tail_dup=     -0.0149  ==
+  reg[ 5] accum=      0.0055  tail_dup=      0.0055  ==
+  reg[ 6] accum=      0.0030  tail_dup=      0.0030  ==
+  reg[ 7] accum=     -0.0057  tail_dup=     -0.0057  ==
+{
+  "accuracy_pct": 76.0,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 1257.838134765625,
+  "mean_ms": 1257.838134765625,
+  "median_ms": 1257.838134765625,
+  "min_ms": 1257.838134765625,
+  "model": "shufflenet",
+  "p95_ms": 1257.838134765625,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_h100_20260531_taildup_1747/custom_conv_cutlass_test_shufflenet",
+    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_test",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_taildup",
+    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_test/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "True",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 100,
+  "setup": "custom_conv_cutlass_test",
+  "strict": false,
+  "tail_dup": true,
+  "tail_dup_print": false,
+  "timed_batches": 1,
+  "total_forward_ms": 1257.838134765625,
+  "usage_stats": {
+    "direct_calls": 19,
+    "fallback_calls": 9,
+    "modules_replaced": 0,
+    "standalone_calls": 28
+  },
+  "wall_s": 1.3612090009846725
+}
+Collecting data...
+Generating '/tmp/nsys-report-4822.qdstrm'
+[1/1] [0%                          ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [0%                          ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [7%                          ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [=15%                        ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [=16%                        ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [======35%                   ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [=============58%            ] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [========================100%] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep[1/1] [========================100%] shufflenet_custom_conv_cutlass_test_taildup.nsys-rep
+Generated:
+	/storage/ice1/0/3/yjia305/2026_SUMMER/ml_bench/runtime_results_h100_20260531_taildup_nsys_1747/shufflenet_custom_conv_cutlass_test_taildup.nsys-rep
