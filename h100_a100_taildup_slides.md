@@ -199,12 +199,13 @@ fallback_calls = 909
 
 # Nsight Systems Validation
 
-Nsight confirms that the corrected taildup path runs and produces trace artifacts.
+Nsight confirms that the H100 duplication paths run and produce trace artifacts.
 
-H100 full 100-batch taildup Nsight reports:
+H100 full 100-batch Nsight reports:
 
 ```text
 runtime_results_h100_20260531_taildup_nsys_100b_2130/
+runtime_results_h100_20260601_cta_dup_nsys_100b/
 ```
 
 Reports:
@@ -213,7 +214,28 @@ Reports:
 resnet_custom_conv_cutlass_test_taildup.nsys-rep
 mobilenet_custom_conv_cutlass_test_taildup.nsys-rep
 shufflenet_custom_conv_cutlass_test_taildup.nsys-rep
+resnet_custom_conv_cutlass_test_cta_dup.nsys-rep
+mobilenet_custom_conv_cutlass_test_cta_dup.nsys-rep
+shufflenet_custom_conv_cutlass_test_cta_dup.nsys-rep
 ```
+
+---
+
+# H100 Nsight Timing
+
+CUDA-event means recorded while Nsight Systems was attached.
+
+| model | previous taildup under Nsight | new intra-warp branch under Nsight |
+|---|---:|---:|
+| resnet | 19.078 | 16.722 |
+| mobilenet | 28.503 | 28.465 |
+| shufflenet | 17.014 | 19.577 |
+
+Interpretation:
+
+- These are H100 profiler-context timings, not clean runtime timings.
+- The current slide deck does not show H100 clean `cutlass_test` under Nsight because that profile was not rerun on H100.
+- Use this table to show Nsight validation coverage, not the main overhead percentage.
 
 ---
 
@@ -336,6 +358,12 @@ H100 taildup Nsight results:
 
 ```text
 runtime_results_h100_20260531_taildup_nsys_100b_2130/
+```
+
+H100 new intra-warp branch Nsight results:
+
+```text
+runtime_results_h100_20260601_cta_dup_nsys_100b/
 ```
 
 ---
