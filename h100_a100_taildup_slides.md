@@ -22,7 +22,8 @@ Evaluate the runtime impact of a CUTLASS Conv2D tail-duplication path.
 
 Key questions:
 
-- How do A100 and H100 compare on the same benchmark?
+- What are the A100 results across PyTorch and CUTLASS setups?
+- What are the H100 results across PyTorch, CUTLASS, and taildup setups?
 - How much overhead comes from the standalone CUTLASS wrapper?
 - How much additional overhead comes from enabling taildup?
 - Which models fall back to PyTorch conv paths?
@@ -69,37 +70,28 @@ Interpretation:
 
 ---
 
-# A100 vs H100: Clean CUDA Event Timing
+# A100 Clean CUDA Event Timing
 
 Non-Nsight `benchmark_runtime.py` means, ms/batch.
 
-| model | setup | A100 | H100 | H100 vs A100 |
-|---|---|---:|---:|---:|
-| resnet | PyTorch | 3.813 | 1.780 | -53.3% |
-| resnet | cutlass_fresh | 6.085 | 6.290 | +3.4% |
-| resnet | cutlass_test | 6.115 | 6.760 | +10.5% |
-| mobilenet | PyTorch | 9.858 | 3.667 | -62.8% |
-| mobilenet | cutlass_fresh | 13.535 | 13.009 | -3.9% |
-| mobilenet | cutlass_test | 13.863 | 13.144 | -5.2% |
-| shufflenet | PyTorch | 9.551 | 5.201 | -45.5% |
-| shufflenet | cutlass_fresh | 14.837 | 7.088 | -52.2% |
-| shufflenet | cutlass_test | 13.716 | 7.204 | -47.5% |
+| model | PyTorch | cutlass_fresh | cutlass_test |
+|---|---:|---:|---:|
+| resnet | 3.813 | 6.085 | 6.115 |
+| mobilenet | 9.858 | 13.535 | 13.863 |
+| shufflenet | 9.551 | 14.837 | 13.716 |
 
 ---
 
-# A100 vs H100: Takeaways
+# A100 Setup Takeaways
 
-H100 improves PyTorch baseline substantially:
+Within the A100 run:
 
-- ResNet: 3.813 -> 1.780 ms
-- MobileNet: 9.858 -> 3.667 ms
-- ShuffleNet: 9.551 -> 5.201 ms
+- PyTorch is fastest for all three models.
+- `cutlass_fresh` and `cutlass_test` are close.
+- `cutlass_test` is slightly slower than `cutlass_fresh` for ResNet and MobileNet.
+- ShuffleNet `cutlass_test` is slightly faster than `cutlass_fresh`.
 
-Custom CUTLASS behavior is more model-dependent:
-
-- MobileNet and ShuffleNet improve on H100.
-- ResNet custom CUTLASS paths are slightly slower on H100 in these runs.
-- The custom kernels/wrapper are not automatically H100-optimized.
+These rows are useful as the A100 baseline/control setup results.
 
 ---
 
@@ -233,9 +225,9 @@ It used:
 --tail-dup-print
 ```
 
-So it includes CUDA device `printf` overhead and should not be compared directly against H100 no-print taildup performance.
+So it includes CUDA device `printf` overhead. I present it as an A100 validation artifact, not as a direct counterpart to the H100 no-print taildup timing.
 
-Clean A100-vs-H100 taildup comparison needs:
+Clean A100 taildup performance needs a separate rerun:
 
 ```text
 A100 + cutlass_test + --tail-dup
@@ -253,9 +245,10 @@ without:
 
 Main conclusions:
 
-- H100 is much faster than A100 for PyTorch baselines.
-- Custom CUTLASS wrapper performance is model-dependent.
-- Clean `cutlass_fresh` and clean `cutlass_test` are close.
+- A100 clean setup results are available for PyTorch, `cutlass_fresh`, and `cutlass_test`.
+- H100 clean and taildup setup results are available.
+- Custom CUTLASS wrapper behavior is model-dependent.
+- Clean `cutlass_fresh` and clean `cutlass_test` are close on both GPUs.
 - Taildup currently adds large overhead on H100.
 - ResNet and MobileNet have zero fallback; ShuffleNet has fallback.
 - Nsight validates behavior, but CUDA events should be used for overhead claims.
@@ -267,7 +260,7 @@ Main conclusions:
 Recommended follow-up experiments:
 
 - Rerun A100 taildup with `--tail-dup` and no `--tail-dup-print`.
-- Rerun H100 clean PyTorch/fresh/cutlass_test under Nsight for same-GPU Nsight comparison.
+- Rerun H100 clean PyTorch/fresh/cutlass_test under Nsight for a complete H100 profiler-context table.
 - Remove or disable diagnostic output path from taildup builds.
 - Optimize H100-specific CUTLASS configuration.
 - Break down overhead by layer/kernel type.
@@ -323,4 +316,3 @@ ShuffleNet additionally needs:
 ```text
 --no-strict
 ```
-
