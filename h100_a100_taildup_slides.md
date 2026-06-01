@@ -106,18 +106,17 @@ These rows are useful as the A100 baseline/control setup results.
 
 CUDA-event mean ms/batch, 100 timed batches.
 
-| model | PyTorch | cutlass_fresh | cutlass_test | previous taildup rerun | new intra-warp branch |
-|---|---:|---:|---:|---:|---:|
-| resnet | 1.780 | 6.290 | 6.760 | 19.264 | 15.929 |
-| mobilenet | 3.667 | 13.009 | 13.144 | 28.922 | 25.824 |
-| shufflenet | 5.201 | 7.088 | 7.204 | 15.940 | 15.240 |
+| model | PyTorch | naive CUTLASS / fresh | cutlass_test | intra_warp current |
+|---|---:|---:|---:|---:|
+| resnet | 3.932 | 4.730 | 5.847 | 16.427 |
+| mobilenet | 9.753 | 13.656 | 13.974 | 29.091 |
+| shufflenet | 10.055 | 14.113 | 13.559 | 26.124 |
 
 Main observations:
 
 - `cutlass_fresh` and clean `cutlass_test` are close.
-- Previous taildup adds substantial overhead in the current implementation.
-- The new intra-warp branch is lower than previous taildup, but still much slower than clean `cutlass_test`.
-- PyTorch remains fastest for these small CIFAR models on H100.
+- `intra_warp current` adds large overhead relative to clean `cutlass_test`.
+- PyTorch remains fastest for these CIFAR models on H100.
 
 ---
 
@@ -141,19 +140,18 @@ Interpretation:
 
 # H100 New Intra-Warp Branch
 
-CUDA-event results for the new `intra-warp-duplication` branch.
+CUDA-event results for the current `intra-warp-duplication` branch.
 
-| model | clean cutlass_test | new intra-warp branch | overhead | vs previous taildup rerun |
-|---|---:|---:|---:|---:|
-| resnet | 6.760 | 15.929 | +135.65% | -17.31% |
-| mobilenet | 13.144 | 25.824 | +96.47% | -10.71% |
-| shufflenet | 7.204 | 15.240 | +111.55% | -4.39% |
+| model | cutlass_test | intra_warp current | overhead |
+|---|---:|---:|---:|
+| resnet | 5.847 | 16.427 | +180.95% |
+| mobilenet | 13.974 | 29.091 | +108.18% |
+| shufflenet | 13.559 | 26.124 | +92.67% |
 
 Interpretation:
 
 - This is the new `intra-warp-duplication` branch result.
 - In the current checked-out branch, the measured mechanism is CTA/launch-level duplication.
-- It is consistently faster than previous taildup.
 - It is still far slower than clean `cutlass_test`.
 - It is not yet true warp-level HMMA duplication in the mainloop.
 
@@ -225,17 +223,17 @@ shufflenet_custom_conv_cutlass_test_cta_dup.nsys-rep
 
 CUDA-event means recorded while Nsight Systems was attached.
 
-| model | previous taildup under Nsight | new intra-warp branch under Nsight |
-|---|---:|---:|
-| resnet | 19.078 | 16.722 |
-| mobilenet | 28.503 | 28.465 |
-| shufflenet | 17.014 | 19.577 |
+| model | PyTorch | naive CUTLASS / fresh | cutlass_test | intra_warp current |
+|---|---:|---:|---:|---:|
+| resnet | 6.530 | 8.324 | 8.409 | 20.976 |
+| mobilenet | 14.933 | 19.005 | 17.941 | 35.452 |
+| shufflenet | 17.829 | 21.788 | 21.475 | 31.637 |
 
 Interpretation:
 
 - These are H100 profiler-context timings, not clean runtime timings.
-- The current slide deck does not show H100 clean `cutlass_test` under Nsight because that profile was not rerun on H100.
-- Use this table to show Nsight validation coverage, not the main overhead percentage.
+- Nsight shows the same qualitative result as CUDA-event timing: `intra_warp current` is slower than clean `cutlass_test`.
+- Use CUDA-event timing for the main overhead claim; use Nsight for profiler validation.
 
 ---
 
