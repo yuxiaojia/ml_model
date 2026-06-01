@@ -69,4 +69,26 @@ The intended difference is only the CUTLASS tree selected by
 Each custom folder has a `sitecustomize.py` that enables the standalone custom
 Conv2d path by default and wraps models loaded through `torch.hub.load`. YOLO is
 handled by the copied `cutlass_only_config.configure_yolo_model_layout()`.
+
+## Current CTA Duplicate Experiment
+
+The current `/nethome/yjia305/USERSCRATCH/cutlass_intra_warp` branch implements
+CTA/kernel-launch-level DMR in CUTLASS Conv2D. It is enabled from this benchmark
+with:
+
+```bash
+python -B benchmark_runtime.py \
+  --setup custom_conv_cutlass_test \
+  --model resnet \
+  --cutlass-dir /nethome/yjia305/USERSCRATCH/cutlass_intra_warp \
+  --build-root /tmp/ml_bench_intra_warp_current_full \
+  --output-dir runtime_results_intra_warp_current_full/cta_duplicate \
+  --warmup 1 \
+  --cta-dup
+```
+
+This is not warp-level `warp_mma` duplication. See
+[`CTA_DUPLICATE_CURRENT_RESULTS.md`](CTA_DUPLICATE_CURRENT_RESULTS.md) for the
+implementation details, exact commands, correctness check, CUDA-event overhead,
+and Nsight results.
 # ml_model
