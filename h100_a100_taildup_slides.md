@@ -39,7 +39,7 @@ Key questions:
 | cutlass_fresh | Standalone CUTLASS Conv2D wrapper, no taildup modification |
 | cutlass_test | Modified CUTLASS checkout, taildup-capable but taildup disabled |
 | cutlass_test + previous taildup | Same `cutlass_test` checkout with `--tail-dup` enabled |
-| CTA duplication | New `intra-warp-duplication` branch with CTA duplicate macro enabled |
+| new intra-warp branch | `intra-warp-duplication` branch; current measured implementation uses CTA duplicate macro |
 
 Previous taildup is **not** a separate repo. It is:
 
@@ -47,7 +47,7 @@ Previous taildup is **not** a separate repo. It is:
 cutlass_test + --tail-dup
 ```
 
-CTA duplication is enabled by:
+The new intra-warp branch data is enabled by:
 
 ```text
 NVCC_PREPEND_FLAGS=-DCUTLASS_ENABLE_IMPLICIT_GEMM_CTA_DUPLICATE=1
@@ -106,7 +106,7 @@ These rows are useful as the A100 baseline/control setup results.
 
 CUDA-event mean ms/batch, 100 timed batches.
 
-| model | PyTorch | cutlass_fresh | cutlass_test | previous taildup rerun | CTA duplication |
+| model | PyTorch | cutlass_fresh | cutlass_test | previous taildup rerun | new intra-warp branch |
 |---|---:|---:|---:|---:|---:|
 | resnet | 1.780 | 6.290 | 6.760 | 19.264 | 15.929 |
 | mobilenet | 3.667 | 13.009 | 13.144 | 28.922 | 25.824 |
@@ -116,7 +116,7 @@ Main observations:
 
 - `cutlass_fresh` and clean `cutlass_test` are close.
 - Previous taildup adds substantial overhead in the current implementation.
-- CTA duplication is lower than previous taildup, but still much slower than clean `cutlass_test`.
+- The new intra-warp branch is lower than previous taildup, but still much slower than clean `cutlass_test`.
 - PyTorch remains fastest for these small CIFAR models on H100.
 
 ---
@@ -139,11 +139,11 @@ Interpretation:
 
 ---
 
-# H100 CTA Duplication
+# H100 New Intra-Warp Branch
 
-CTA duplication overhead relative to clean `cutlass_test`.
+CUDA-event results for the new `intra-warp-duplication` branch.
 
-| model | clean cutlass_test | CTA duplication | overhead | vs previous taildup rerun |
+| model | clean cutlass_test | new intra-warp branch | overhead | vs previous taildup rerun |
 |---|---:|---:|---:|---:|
 | resnet | 6.760 | 15.929 | +135.65% | -17.31% |
 | mobilenet | 13.144 | 25.824 | +96.47% | -10.71% |
@@ -151,9 +151,11 @@ CTA duplication overhead relative to clean `cutlass_test`.
 
 Interpretation:
 
-- CTA duplication is consistently faster than previous taildup.
+- This is the new `intra-warp-duplication` branch result.
+- In the current checked-out branch, the measured mechanism is CTA/launch-level duplication.
+- It is consistently faster than previous taildup.
 - It is still far slower than clean `cutlass_test`.
-- This branch currently implements CTA/launch-level duplication, not true warp-level HMMA duplication.
+- It is not yet true warp-level HMMA duplication in the mainloop.
 
 ---
 
@@ -272,11 +274,11 @@ without:
 Main conclusions:
 
 - A100 clean setup results are available for PyTorch, `cutlass_fresh`, and `cutlass_test`.
-- H100 clean, previous-taildup rerun, and CTA-duplication results are available.
+- H100 clean, previous-taildup rerun, and new intra-warp branch results are available.
 - Custom CUTLASS wrapper behavior is model-dependent.
 - Clean `cutlass_fresh` and clean `cutlass_test` are close on both GPUs.
 - Previous taildup currently adds large overhead on H100, and the rerun confirms it.
-- CTA duplication reduces overhead relative to previous taildup, but remains slower than clean `cutlass_test`.
+- The new intra-warp branch reduces overhead relative to previous taildup, but remains slower than clean `cutlass_test`.
 - ResNet and MobileNet have zero fallback; ShuffleNet has fallback.
 - Nsight validates behavior, but CUDA events should be used for overhead claims.
 
@@ -324,7 +326,7 @@ H100 previous-taildup old CUDA-event results:
 runtime_results_h100_20260531_taildup_cuda_event_1747/
 ```
 
-H100 CTA-duplication CUDA-event results:
+H100 new intra-warp branch CUDA-event results:
 
 ```text
 runtime_results_h100_20260601_cta_dup_cuda_event/
