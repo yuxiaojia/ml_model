@@ -1,0 +1,39 @@
+Using cache found in /home/hice1/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 72.63,
+  "batch_size": 100,
+  "device": "NVIDIA H100 80GB HBM3",
+  "max_ms": 33.763614654541016,
+  "mean_ms": 9.363252477645874,
+  "median_ms": 8.601615905761719,
+  "min_ms": 7.776703834533691,
+  "model": "shufflenet",
+  "p95_ms": 11.301183700561523,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_h100_20260601_intra_warp_dup/custom_conv_cutlass_test_shufflenet",
+    "cutlass_dir": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_taildup",
+    "kernel_source": "/storage/ice1/0/3/yjia305/2026_SUMMER/cutlass_intra_warp_dup/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "True",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": false,
+  "tail_dup": true,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 936.3252477645874,
+  "usage_stats": {
+    "direct_calls": 1919,
+    "fallback_calls": 909,
+    "modules_replaced": 0,
+    "standalone_calls": 2828
+  },
+  "wall_s": 1.227948979998473
+}
+Collecting data...
+Generating '/tmp/nsys-report-7f3a.qdstrm'
+[1/1] [0%                          ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [0%                          ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [5%                          ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [6%                          ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [11%                         ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [==19%                       ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [====26%                     ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [======34%                   ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [========41%                 ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [==========49%               ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [===========51%              ] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [========================100%] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep[1/1] [========================100%] shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep
+Generated:
+	/storage/ice1/0/3/yjia305/2026_SUMMER/ml_bench/runtime_results_h100_20260601_intra_warp_dup_nsys_100b/shufflenet_custom_conv_cutlass_test_intra_warp_dup.nsys-rep
