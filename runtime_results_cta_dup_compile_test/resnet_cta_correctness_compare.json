@@ -1,0 +1,62 @@
+{
+  "allclose_zero_tol": true,
+  "argmax_equal_count": 100,
+  "batch_size": 100,
+  "cta_argmax": [
+    68,
+    33,
+    72,
+    51,
+    71,
+    7,
+    15,
+    7,
+    71,
+    0
+  ],
+  "cta_runtime_config": {
+    "build_dir": "/tmp/ml_bench_cta_correctness_build",
+    "cta_duplicate": "True",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_ctadup",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "cta_usage_stats": {
+    "direct_calls": 0,
+    "fallback_calls": 0,
+    "modules_replaced": 21,
+    "standalone_calls": 21
+  },
+  "max_abs_diff": 0.0,
+  "normal_argmax": [
+    68,
+    33,
+    72,
+    51,
+    71,
+    7,
+    15,
+    7,
+    71,
+    0
+  ],
+  "normal_runtime_config": {
+    "build_dir": "/tmp/ml_bench_cta_correctness_build",
+    "cta_duplicate": "False",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "normal_usage_stats": {
+    "direct_calls": 0,
+    "fallback_calls": 0,
+    "modules_replaced": 21,
+    "standalone_calls": 21
+  },
+  "num_different_elements": 0,
+  "same_shape": true
+}
