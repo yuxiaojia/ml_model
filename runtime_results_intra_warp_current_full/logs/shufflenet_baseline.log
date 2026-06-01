@@ -1,0 +1,36 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 72.62,
+  "batch_size": 100,
+  "cta_dup": false,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 29.336063385009766,
+  "mean_ms": 13.782897963523865,
+  "median_ms": 12.389535903930664,
+  "min_ms": 7.754752159118652,
+  "model": "shufflenet",
+  "p95_ms": 24.069599151611328,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_intra_warp_current_full/custom_conv_cutlass_test_shufflenet",
+    "cta_duplicate": "False",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": false,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 1378.2897963523865,
+  "usage_stats": {
+    "direct_calls": 1919,
+    "fallback_calls": 909,
+    "modules_replaced": 0,
+    "standalone_calls": 2828
+  },
+  "wall_s": 2.0308752497658134
+}

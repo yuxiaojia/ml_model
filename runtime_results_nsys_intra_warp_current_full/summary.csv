@@ -1,0 +1,4 @@
+model,baseline_event_mean_ms_under_nsys,duplicate_event_mean_ms_under_nsys,event_overhead_pct_under_nsys,timed_batches,samples,report_baseline,report_duplicate
+resnet,8.28960735797882,20.976320238113402,153.04359220251257,100,10000,resnet_baseline.nsys-rep,resnet_cta_duplicate.nsys-rep
+mobilenet,18.698228540420534,35.452445907592775,89.60323343440871,100,10000,mobilenet_baseline.nsys-rep,mobilenet_cta_duplicate.nsys-rep
+shufflenet,21.72864059448242,31.636621112823487,45.59871325248488,100,10000,shufflenet_baseline.nsys-rep,shufflenet_cta_duplicate.nsys-rep

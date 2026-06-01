@@ -1,0 +1,41 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 68.84,
+  "batch_size": 100,
+  "cta_dup": false,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 30.775487899780273,
+  "mean_ms": 8.28960735797882,
+  "median_ms": 6.796432018280029,
+  "min_ms": 5.798208236694336,
+  "model": "resnet",
+  "p95_ms": 17.456480026245117,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_intra_warp_current_full/custom_conv_cutlass_test_resnet",
+    "cta_duplicate": "False",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 828.9607357978821,
+  "usage_stats": {
+    "direct_calls": 0,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 2121
+  },
+  "wall_s": 1.7880749329924583
+}
+Collecting data...
+Generating '/tmp/nsys-report-d7f3.qdstrm'
+[1/1] [0%                          ] resnet_baseline.nsys-rep[1/1] [0%                          ] resnet_baseline.nsys-rep[1/1] [6%                          ] resnet_baseline.nsys-rep[1/1] [13%                         ] resnet_baseline.nsys-rep[1/1] [8%                          ] resnet_baseline.nsys-rep[1/1] [6%                          ] resnet_baseline.nsys-rep[1/1] [5%                          ] resnet_baseline.nsys-rep[1/1] [5%                          ] resnet_baseline.nsys-rep[1/1] [6%                          ] resnet_baseline.nsys-rep[1/1] [7%                          ] resnet_baseline.nsys-rep[1/1] [6%                          ] resnet_baseline.nsys-rep[1/1] [5%                          ] resnet_baseline.nsys-rep[1/1] [7%                          ] resnet_baseline.nsys-rep[1/1] [10%                         ] resnet_baseline.nsys-rep[1/1] [13%                         ] resnet_baseline.nsys-rep[1/1] [=16%                        ] resnet_baseline.nsys-rep[1/1] [==19%                       ] resnet_baseline.nsys-rep[1/1] [===23%                      ] resnet_baseline.nsys-rep[1/1] [====26%                     ] resnet_baseline.nsys-rep[1/1] [=====30%                    ] resnet_baseline.nsys-rep[1/1] [======33%                   ] resnet_baseline.nsys-rep[1/1] [=======37%                  ] resnet_baseline.nsys-rep[1/1] [========40%                 ] resnet_baseline.nsys-rep[1/1] [=========43%                ] resnet_baseline.nsys-rep[1/1] [==========47%               ] resnet_baseline.nsys-rep[1/1] [===========52%              ] resnet_baseline.nsys-rep[1/1] [============57%             ] resnet_baseline.nsys-rep[1/1] [========================100%] resnet_baseline.nsys-rep[1/1] [========================100%] resnet_baseline.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_intra_warp_current_full/resnet_baseline.nsys-rep

@@ -1,0 +1,41 @@
+Using cache found in /nethome/yjia305/.cache/torch/hub/chenyaofo_pytorch-cifar-models_master
+{
+  "accuracy_pct": 74.31,
+  "batch_size": 100,
+  "cta_dup": true,
+  "device": "NVIDIA A100-PCIE-40GB",
+  "max_ms": 56.90176010131836,
+  "mean_ms": 35.452445907592775,
+  "median_ms": 34.28830337524414,
+  "min_ms": 26.81679916381836,
+  "model": "mobilenet",
+  "p95_ms": 46.668670654296875,
+  "runtime_config": {
+    "build_dir": "/tmp/ml_bench_intra_warp_current_full/custom_conv_cutlass_test_mobilenet",
+    "cta_duplicate": "True",
+    "cutlass_dir": "/net/netscratch/yjia305/cutlass_intra_warp",
+    "extension_name": "torch_cutlass_test_conv_ext_v1_ctadup",
+    "kernel_source": "/net/netscratch/yjia305/cutlass_intra_warp/tools/torch_cutlass_conv/cutlass_conv2d_kernel.cu",
+    "tail_duplicate": "False",
+    "tail_duplicate_print": "False"
+  },
+  "samples": 10000,
+  "setup": "custom_conv_cutlass_test",
+  "strict": true,
+  "tail_dup": false,
+  "tail_dup_print": false,
+  "timed_batches": 100,
+  "total_forward_ms": 3545.2445907592773,
+  "usage_stats": {
+    "direct_calls": 1717,
+    "fallback_calls": 0,
+    "modules_replaced": 0,
+    "standalone_calls": 3535
+  },
+  "wall_s": 3.7811132478527725
+}
+Collecting data...
+Generating '/tmp/nsys-report-9fd7.qdstrm'
+[1/1] [0%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [0%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [5%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [6%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [7%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [8%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [6%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [7%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [6%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [5%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [5%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [5%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [7%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [9%                          ] mobilenet_cta_duplicate.nsys-rep[1/1] [12%                         ] mobilenet_cta_duplicate.nsys-rep[1/1] [14%                         ] mobilenet_cta_duplicate.nsys-rep[1/1] [=16%                        ] mobilenet_cta_duplicate.nsys-rep[1/1] [==18%                       ] mobilenet_cta_duplicate.nsys-rep[1/1] [==20%                       ] mobilenet_cta_duplicate.nsys-rep[1/1] [===22%                      ] mobilenet_cta_duplicate.nsys-rep[1/1] [===23%                      ] mobilenet_cta_duplicate.nsys-rep[1/1] [====25%                     ] mobilenet_cta_duplicate.nsys-rep[1/1] [====28%                     ] mobilenet_cta_duplicate.nsys-rep[1/1] [=====31%                    ] mobilenet_cta_duplicate.nsys-rep[1/1] [======35%                   ] mobilenet_cta_duplicate.nsys-rep[1/1] [=======39%                  ] mobilenet_cta_duplicate.nsys-rep[1/1] [========42%                 ] mobilenet_cta_duplicate.nsys-rep[1/1] [=========46%                ] mobilenet_cta_duplicate.nsys-rep[1/1] [==========49%               ] mobilenet_cta_duplicate.nsys-rep[1/1] [===========52%              ] mobilenet_cta_duplicate.nsys-rep[1/1] [============55%             ] mobilenet_cta_duplicate.nsys-rep[1/1] [=============59%            ] mobilenet_cta_duplicate.nsys-rep[1/1] [==============62%           ] mobilenet_cta_duplicate.nsys-rep[1/1] [==============64%           ] mobilenet_cta_duplicate.nsys-rep[1/1] [========================100%] mobilenet_cta_duplicate.nsys-rep[1/1] [========================100%] mobilenet_cta_duplicate.nsys-rep
+Generated:
+	/net/netscratch/yjia305/ml_bench/runtime_results_nsys_intra_warp_current_full/mobilenet_cta_duplicate.nsys-rep
